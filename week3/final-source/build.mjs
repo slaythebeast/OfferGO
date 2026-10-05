@@ -1,0 +1,10 @@
+import {build} from 'esbuild';
+import {mkdir,readFile,writeFile,copyFile,readdir,unlink} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+await mkdir('dist',{recursive:true});
+for(const f of ['app.js','style.css'])await unlink('dist/'+f).catch(()=>{});
+await build({entryPoints:['src/main.jsx'],bundle:true,format:'iife',minify:true,outfile:'dist/react-app.js',loader:{'.css':'empty'},define:{'process.env.NODE_ENV':'"production"'}});
+execFileSync(process.execPath,['node_modules/tailwindcss/lib/cli.js','-i','src/styles.css','-o','dist/style.css','--minify'],{stdio:'inherit'});
+await copyFile('public/legacy.js','dist/legacy.js');
+let html=await readFile('index.html','utf8');html=html.replace('</head>','<link rel="stylesheet" href="/style.css"></head>').replace('<script type="module" src="/src/main.jsx"></script>','<script defer src="/react-app.js"></script>');await writeFile('dist/index.html',html);
+console.log('Static React + Tailwind build complete.');
