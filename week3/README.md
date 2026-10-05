@@ -65,3 +65,9 @@ The prototype is viewable at <https://offergo-uk.xibian45.chatgpt.site>. The web
 All academic profiles, programme outcomes and community activity in this front-end prototype are fictional demonstrations. The writing tool is a coach, not a ghostwriter; the user remains responsible for factual accuracy and final wording.
 
 当前前端中的个人档案、录取案例与社区动态均为虚构演示。文书工具定位为教练和反馈，不代写、不虚构经历；事实准确性和最终文本由申请人确认。
+
+## Related AI chat demo / 相关 AI 助手体验
+
+- [Open the Dify chat assistant / 打开 Dify 聊天助手](https://udify.app/chat/VZMYturduEr3KJVX) — a separate chat link shared for the Week 3 project. It is not currently integrated with the OfferGo front-end source; the in-site assistant remains a static front-end demonstration.
+
+- [体验 Dify 聊天助手](https://udify.app/chat/VZMYturduEr3KJVX)：这是第三周相关的独立聊天体验链接，当前尚未接入 OfferGo 前端源码；OfferGo 页面内的小助手仍为静态前端演示。
